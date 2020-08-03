@@ -125,7 +125,6 @@ function handleclickTeam2(){
     }
     team1Count = 0;
     getScore();
-    // startTime();
     if(a>=70 || ((button1 as HTMLInputElement).disabled == true && (button2 as HTMLInputElement).disabled == true)){
         (button2 as HTMLInputElement).disabled = true;
         if(team1Total > team2Total){
@@ -135,7 +134,6 @@ function handleclickTeam2(){
         }else{
             result.innerText = "Team 2 has won";
         }
-        
     }
 }
 
@@ -215,12 +213,17 @@ if(team2Count > 0 && timeCount2 == 0){
     timeCount2++;
     document.getElementById('timer').innerHTML = 01 + ":" + 00;
   }
+  console.log("hai")
 startTimer();
-
 }
 
 function startTimer() {
     console.log("hia yuva")
+    if((button1 as HTMLInputElement).disabled == true && a>= 70){
+        return document.getElementById('timer').textContent;
+  }else if((button2 as HTMLInputElement).disabled == true && a>= 70){
+        return document.getElementById('timer').textContent;
+  }
   
   var presentTime = document.getElementById('timer').innerHTML;
   var timeSet:any = presentTime.split(/[:]+/);
